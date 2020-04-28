@@ -1,0 +1,30 @@
+<h1>New Employee Form</h1>
+
+<%= form_with model:@employee do |f|%>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <small>Cannot be the same title as anothr employee</small><br>
+
+  <%= f.label :alias %>
+  <%= f.text_field :alias %><br>
+   <small>Cannot be the same alias as anothr employee</small><br>
+
+  <%= f.label :office %>
+  <%= f.text_field :office %><br>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %><br>
+
+
+  <%= f.label :dog_id %>
+  <%= f.collection_select :dog_id, Dog.all, :id, :name %><br>
+
+  <%= f.submit %>
+
+<% end %>
