@@ -1,0 +1,12 @@
+<img src="<%= @employee.img_url %>" 
+style="max-width: 100px; max-height: 100px; border-radius: 10%" 
+alt="">
+<h1><%= @employee.to_s %></h1>
+<div><strong>First Name:</strong> <%= @employee.first_name %></div>
+<div><strong>Last Name:</strong> <%= @employee.last_name %></div>
+<div><strong>Alias:</strong> <%= @employee.alias %></div>
+<div><strong>Office:</strong> <%= @employee.office %></div>
+<div><strong>Dog:</strong> <%= Dog.find_by(id: @employee.dog_id).name %></div>
+
+<%= link_to  "Edit", edit_employee_path(@employee), :method => :get %>
+<%= button_to "Home", employees_path, :method => :get %>
